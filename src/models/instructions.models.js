@@ -18,7 +18,7 @@ const Instructions = dbSequelize.define("instructions", {
     allowNull: false,
     field: "recipe_id",
     references: {
-      key: id,
+      key: "id",
       model: Recipes,
     },
   },

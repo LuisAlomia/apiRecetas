@@ -21,7 +21,7 @@ const Ingredients = dbSequelize.define(
       allowNull: false,
       field: "type_id",
       references: {
-        key: id,
+        key: "id",
         model: Types,
       },
     },

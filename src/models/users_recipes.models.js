@@ -3,7 +3,7 @@ const { dbSequelize } = require("../database");
 const Recipes = require("./recipes.models");
 const Users = require("./users.model");
 
-const userRecipes = dbSequelize.define("user_recipes", {
+const UserRecipes = dbSequelize.define("user_recipes", {
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
@@ -19,7 +19,7 @@ const userRecipes = dbSequelize.define("user_recipes", {
     allowNull: false,
     field: "user_id",
     references: {
-      key: id,
+      key: "id",
       model: Users,
     },
   },
@@ -28,10 +28,10 @@ const userRecipes = dbSequelize.define("user_recipes", {
     allowNull: false,
     field: "recipe_id",
     references: {
-      key: id,
+      key: "id",
       model: Recipes,
     },
   },
 });
 
-module.exports = userRecipes;
+module.exports = UserRecipes;

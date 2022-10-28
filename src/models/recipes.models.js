@@ -38,7 +38,7 @@ const Recipes = dbSequelize.define("recipes", {
     allowNull: false,
     field: "user_id",
     references: {
-      key: id,
+      key: "id",
       model: Users,
     },
   },
@@ -47,7 +47,7 @@ const Recipes = dbSequelize.define("recipes", {
     allowNull: false,
     field: "category_id",
     references: {
-      key: id,
+      key: "id",
       model: Categories,
     },
   },
