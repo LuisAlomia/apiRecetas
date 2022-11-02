@@ -4,18 +4,19 @@
   "description": "aplicacion de recetas de comida",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/index.js",
     "start": "node ./src/index.js",
-    "test": "node ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "test": "npx mocha ./test/recipes.test.js"
   },
   "keywords": [],
   "author": "Luis fidel alomia valencia",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "5.1.0",
-    "cors": "2.8.5",
+    "cors": "^2.8.5",
     "dotenv": "16.0.3",
     "express": "4.18.2",
+    "express-validator": "^6.14.2",
     "jsonwebtoken": "8.5.1",
     "passport": "0.6.0",
     "passport-jwt": "4.0.0",
@@ -25,6 +26,10 @@
     "uuid": "9.0.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.1.0",
     "nodemon": "2.0.20"
   }
 }

@@ -16,7 +16,6 @@ const UserRecipes = dbSequelize.define("user_recipes", {
   },
   userId: {
     type: DataTypes.UUID,
-    allowNull: false,
     field: "user_id",
     references: {
       key: "id",
@@ -25,7 +24,6 @@ const UserRecipes = dbSequelize.define("user_recipes", {
   },
   recipeId: {
     type: DataTypes.UUID,
-    allowNull: false,
     field: "recipe_id",
     references: {
       key: "id",

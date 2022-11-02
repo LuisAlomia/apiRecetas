@@ -18,7 +18,6 @@ const Ingredients = dbSequelize.define(
     },
     typeId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       field: "type_id",
       references: {
         key: "id",
@@ -28,7 +27,6 @@ const Ingredients = dbSequelize.define(
     urlImg: {
       type: DataTypes.STRING,
       field: "url_img",
-      validate: { isUrl: true },
     },
   },
   { timestamps: false }

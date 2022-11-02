@@ -15,7 +15,6 @@ const Instructions = dbSequelize.define("instructions", {
   },
   recipeId: {
     type: DataTypes.UUID,
-    allowNull: false,
     field: "recipe_id",
     references: {
       key: "id",

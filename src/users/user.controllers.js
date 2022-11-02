@@ -1,6 +1,6 @@
 const userServices = require("./user.services");
 
-const getAll = (req, resp) => {
+const getAll = (_req, resp) => {
   userServices
     .getAll()
     .then((data) => resp.status(200).json(data))

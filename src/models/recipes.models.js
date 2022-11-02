@@ -21,9 +21,6 @@ const Recipes = dbSequelize.define("recipes", {
   urlImg: {
     type: DataTypes.STRING,
     field: "url_img",
-    validate: {
-      isUrl: true,
-    },
   },
   time: {
     type: DataTypes.INTEGER,
@@ -35,7 +32,6 @@ const Recipes = dbSequelize.define("recipes", {
   },
   userId: {
     type: DataTypes.UUID,
-    allowNull: false,
     field: "user_id",
     references: {
       key: "id",
@@ -44,7 +40,6 @@ const Recipes = dbSequelize.define("recipes", {
   },
   categoryId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
     field: "category_id",
     references: {
       key: "id",
