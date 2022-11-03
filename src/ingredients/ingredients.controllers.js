@@ -56,4 +56,26 @@ const update = (req, resp) => {
     .catch((err) => resp.status(400).json({ message: err.message }));
 };
 
-module.exports = { getAll, getOne, deleteCategory, create, update };
+const addIngedientToUser = (req, resp) => {
+  const userId = req.user.id;
+  const ingredientId = req.params.ingredient_id;
+  const { amount } = req.body;
+
+  ingredientServices
+    .addIngedientToUser({ userId, ingredientId, amount })
+    .then((data) => {
+      data
+        ? resp.status(200).json(data)
+        : resp.status(404).json({ message: `Invalid ID` });
+    })
+    .catch((err) => resp.status(400).json({ message: err.message }));
+};
+
+module.exports = {
+  getAll,
+  getOne,
+  deleteCategory,
+  create,
+  update,
+  addIngedientToUser,
+};

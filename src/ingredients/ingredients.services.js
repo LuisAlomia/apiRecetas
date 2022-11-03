@@ -1,5 +1,6 @@
 const Ingredients = require("../models/ingredients.models");
 const uuid = require("uuid");
+const UserIngredients = require("../models/users_ingredients.models");
 
 const getAll = async () => {
   const data = await Ingredients.findAll({});
@@ -31,4 +32,21 @@ const deleteCategory = async (id) => {
   return data;
 };
 
-module.exports = { getAll, getOne, create, deleteCategory, update };
+const addIngedientToUser = async (data) => {
+  const newIngredientToUser = await UserIngredients.create({
+    id: uuid.v4(),
+    amount: data.amount,
+    userId: data.userId,
+    ingredientId: data.ingredientId,
+  });
+  return newIngredientToUser;
+};
+
+module.exports = {
+  getAll,
+  getOne,
+  create,
+  deleteCategory,
+  update,
+  addIngedientToUser,
+};

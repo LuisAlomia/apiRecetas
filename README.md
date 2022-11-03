@@ -1,6 +1,6 @@
 # Recipes API
 
-Esta es una **API Rest** desarrollada en **NODE JS**, que permite la creación actualización y eliminación de usuarios, recetas y categorías. Además tiene **validación de datos, rutas protegidas, roles, Hash de contraseñas, validacion de datos y token de sesión.** De esta manera una vez el usuario crea una cuenta este podrá crear diferentes recetas, agregar a favoritas, compartirlas y ver las recetas creadas por otros usuarios.
+Esta es una **API Rest** desarrollada en **NODE JS**, que permite la creación actualización y eliminación de usuarios, recetas y categorías. Además tiene **validación de datos, rutas protegidas, roles, Hash de contraseñas, joins con sequelize, validacion de datos y token de sesión.** De esta manera una vez el usuario crea una cuenta este podrá crear diferentes recetas, agregar a favoritas, compartirlas, agregar ingredientes para ver que recetas de las disponibles puede hacer y ver las recetas creadas por otros usuarios.
 
 ### Tecnologías principales
 

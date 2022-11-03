@@ -76,4 +76,24 @@ const update = (req, resp) => {
     .catch((err) => resp.status(400).json({ message: err.message }));
 };
 
-module.exports = { getAll, getOne, deleteCategory, create, update };
+const getMyRecipes = (req, resp) => {
+  const userId = req.user.id;
+
+  recipesServices
+    .getMyRecipes(userId)
+    .then((data) => {
+      data
+        ? resp.status(200).json(data)
+        : resp.status(404).json({ message: `Not Recipes Disponebles` });
+    })
+    .catch((err) => resp.status(400).json({ message: err.message }));
+};
+
+module.exports = {
+  getAll,
+  getOne,
+  deleteCategory,
+  create,
+  update,
+  getMyRecipes,
+};

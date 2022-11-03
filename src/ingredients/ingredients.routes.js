@@ -7,6 +7,7 @@ require("../middleware/authUser.middleware")(passport);
 const {
   validateCreateIngredient,
   validateUpdateIngredient,
+  validateAddIngredientToUser,
 } = require("../validations/validate");
 
 const authUser = passport.authenticate("jwt", { session: false });
@@ -31,5 +32,12 @@ router
     authRole,
     ingredientControllers.update
   );
+
+router.post(
+  "/:ingredient_id/add_to_user",
+  authUser,
+  validateAddIngredientToUser,
+  ingredientControllers.addIngedientToUser
+);
 
 module.exports = router;

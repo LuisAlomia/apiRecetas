@@ -80,6 +80,11 @@ const validateUpdateRecipes = [
   (req, res, next) => validateResult(req, res, next),
 ];
 
+const validateAddIngredientToUser = [
+  check("amount").exists().exists().notEmpty().isString(),
+  (req, resp, next) => validateResult(req, resp, next),
+];
+
 module.exports = {
   validateCreateCategory,
   validateCreateType,
@@ -92,4 +97,5 @@ module.exports = {
   validateCreateUserIngredient,
   validateCreateRecipes,
   validateUpdateRecipes,
+  validateAddIngredientToUser,
 };
