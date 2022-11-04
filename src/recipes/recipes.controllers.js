@@ -82,7 +82,7 @@ const getMyRecipes = (req, resp) => {
   recipesServices
     .getMyRecipes(userId)
     .then((data) => {
-      data
+      data.length > 0
         ? resp.status(200).json(data)
         : resp.status(404).json({ message: `Not Recipes Disponebles` });
     })

@@ -7,6 +7,15 @@ const dbSequelize = new Sequelize({
   host: config.db.host,
   database: config.db.database,
   dialect: "postgres",
+  dialectOptions:
+    process.env.NODE_ENV === "production"
+      ? {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false,
+          },
+        }
+      : {},
 });
 
 const dataBaseInit = async () => {
